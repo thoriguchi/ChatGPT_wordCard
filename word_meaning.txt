@@ -1,0 +1,5 @@
+apple:りんご
+grape:ぶどう
+scientific:科学
+consumables:消耗品
+research:研究
