@@ -114,11 +114,17 @@ public class VocabularyApp extends JFrame {
     }
 
     private String fetchExampleFromWebService(String word) {
+        if(word.equals(""))return "";
+        for(int i=0;i<word.length();i++){
+            if(word.charAt(i)>='a'&&word.charAt(i)<='z'||
+            word.charAt(i)>='A'&&word.charAt(i)<='Z')continue;
+            return "";
+        }
         String example = null;
         try {
             // 送信先のURLを設定
             //URL url = new URL("http://localhost:8888/post-endpoint");
-            URL url = new URL("http://192.168.1.5:8888");
+            URL url = new URL("http://localhost:8888");
 
             // HttpURLConnectionを作成
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
